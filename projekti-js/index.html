@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filma Online & API Users</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Filma Online & API Users</h1>
+
+    <button id="switch-button">Switch to Users</button>
+
+    <div id="movie-section" class="section">
+      <div class="form-container">
+        <h2>Regjistro dhe kerko filmin</h2>
+        <form id="movie-form">
+          <label for="title">Titulli:</label>
+          <input type="text" id="title" required />
+          <label for="genre">Zhanri:</label>
+          <input type="text" id="genre" required />
+          <label for="actor">Aktori Kryesor:</label>
+          <input type="text" id="actor" required />
+          <button type="submit">Regjistro</button>
+        </form>
+      </div>
+
+      <div class="search-container">
+        <h2>Kërko Filmat</h2>
+        <input type="text" id="search" placeholder="Kërko..." />
+      </div>
+
+      <div class="movies-container">
+        <h2>Filmat</h2>
+        <ul id="movie-list"></ul>
+      </div>
+    </div>
+
+    <div id="user-section" class="section hidden">
+      <h2>API Users</h2>
+      <div class="users-container">
+        <ul id="user-list"></ul>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
