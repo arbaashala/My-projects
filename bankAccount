@@ -1,0 +1,169 @@
+public class User {
+    private String name;
+    private String personalNumber;
+    private double balance;
+    public User(String name, String personalNumber, double balance) {
+        this.name = name;
+        this.personalNumber = personalNumber;
+        this.balance = balance;
+    }
+    public String getName() {
+        return name;
+    }
+    public String getPersonalNumber() {
+        return personalNumber;
+    }
+    public double getBalance() {
+        return balance;
+    }
+    public void withdraw(double amount) {
+        if (amount <= balance) {
+            balance -= amount;
+            System.out.println("Withdrawal successful. Your new balance is: $" + balance);
+        } else {
+            System.out.println("Insufficient funds. Your balance is: $" + balance);
+        }
+    }
+}
+
+
+
+
+import java.util.HashMap;
+import java.util.Map;
+public class ATM {
+    private Map<String, User> users;
+    public ATM() {
+        users = new HashMap<>();
+        // Sample users
+        users.put("12345", new User("John Doe", "12345", 1000.00));
+        users.put("67890", new User("Jane Smith", "67890", 500.00));
+    }
+    public User getUser(String personalNumber) {
+        return users.get(personalNumber);
+    }
+    public void start() {
+        java.util.Scanner scanner = new java.util.Scanner(System.in);
+        System.out.print("Enter your personal number: ");
+        String personalNumber = scanner.nextLine();
+        User user = getUser(personalNumber);
+        if (user == null) {
+            System.out.println("User not found.");
+            return;
+        }
+        System.out.println("Welcome " + user.getName());
+        System.out.println("Your current balance is: $" + user.getBalance());
+        System.out.print("Enter amount to withdraw: ");
+        double amount = scanner.nextDouble();
+        user.withdraw(amount);
+        scanner.close();
+    }
+}
+
+
+
+
+public class Main {
+    public static void main(String[] args) {
+        ATM atm = new ATM();
+        atm.start();
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
